@@ -1,78 +1,195 @@
-/* GENERAL STYLES */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #e8f5e9;
-}
+<style>
+  /* Reset */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-/* HEADER */
-header {
-    background-color: #2e7d32;
-    padding: 20px;
-    text-align: center;
-}
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
 
-header a {
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    padding: 15px 0;
+    z-index: 1000;
+    animation: slideDown 1s ease;
+  }
+
+  header nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  header nav a {
     color: white;
     text-decoration: none;
-    margin: 0 20px;
-    font-size: 20px;
-    font-weight: bold;
-}
+    font-weight: 600;
+    font-size: 18px;
+    transition: color 0.3s, transform 0.3s;
+  }
 
-header a:hover {
-    text-decoration: underline;
-}
+  header nav a:hover {
+    transform: scale(1.05);
+  }
 
-/* MAIN CONTAINER */
-.container {
-    width: 90%;
+  @keyframes slideDown {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Hero Section */
+  .hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    animation: fadeIn 2s ease;
+  }
+
+  .hero h1 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+  }
+
+  .hero p {
+    max-width: 600px;
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+
+  .hero img {
+    width: 200-250px;
+    border-radius: 50%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .hero img:hover {
+    transform: scale(1.05) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Sections */
+  .section {
+    max-width: 900px;
     margin: 40px auto;
     background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
+    border-radius: 15px;
+    padding: 40px 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    animation: fadeIn 1.5s ease;
+  }
 
-/* HEADINGS */
-h1 {
-    text-align: center;
-    color: #1b5e20;
+  .section h2 {
+    font-family: 'Poppins', sans-serif;
     font-size: 32px;
-    margin-bottom: 10px;
-}
-
-/* HORIZONTAL RULE */
-hr {
-    width: 60%;
-    border: 1px solid #1b5e20;
     margin-bottom: 30px;
-}
+    text-align: center;
+  }
 
-/* IMAGE STYLING */
-img {
-    width: 200px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.3);
-    display: block;
-    margin: 0 auto 20px auto;
-}
+  /* Cards (Skills, Career, Contact) */
+  .cards, .skills, .experience, .contact-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25-40px;
+  }
 
-/* TABLE STYLING */
-table {
+  .card {
+    width: 250px;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+
+  .card i {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  .card h3 {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 10px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+
+  /* Tables (Biodata, Contact) */
+  table {
     width: 100%;
     border-collapse: collapse;
     font-size: 18px;
-}
+    margin-top: 20px;
+  }
 
-table, th, td {
-    border: 1px solid #2e7d32;
-}
+  table, th, td {
+    border: 1px solid #aaa;
+  }
 
-th, td {
+  th, td {
     padding: 12px;
-}
+  }
 
-th {
-    background-color: #c8e6c9;
-}
+  th {
+    text-align: left;
+  }
+
+  /* Scroll fade animation */
+  .fade-row {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-row.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Footer */
+  footer {
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 32px; }
+    .card { width: 80%; }
+    table { font-size: 16px; }
+  }
+
+  /* Page-specific colors */
+  body#index-page { background: #f0f5f2; }
+  body#index-page header { background: #2e7d32; }
+  body#index-page .section h2, body#index-page .card i { color: #2e7d32; }
+  body#biodata-page { background: #fff0f5; }
+  body#biodata-page header { background: #c2185b; }
+  body#biodata-page .section h2, body#biodata-page .card i { color: #c2185b; }
+  body#career-page { background: #e0f7fa; }
+  body#career-page header { background: #1565c0; }
+  body#career-page .section h2, body#career-page .card i { color: #1565c0; }
+  body#contact-page { background: #f3e5f5; }
+  body#contact-page header { background: #6a1b9a; }
+  body#contact-page .section h2, body#contact-page .card i { color: #6a1b9a; }
+</style>
