@@ -6,7 +6,7 @@
   <title>Contact | Nur Raihan Johari</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -15,7 +15,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Roboto', sans-serif;
       background-color: #f3e5f5; /* soft lavender */
       color: #333;
       line-height: 1.6;
@@ -27,7 +27,7 @@
       background-color: #6a1b9a; /* deep purple */
       padding: 15px 0;
       z-index: 1000;
-      animation: fadeDown 1s ease;
+      animation: slideDown 1s ease;
     }
 
     header nav {
@@ -46,12 +46,11 @@
 
     header nav a:hover {
       color: #8e24aa; /* medium purple highlight */
-      transform: scale(1.05);
     }
 
-    @keyframes fadeDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes slideDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     .section {
@@ -61,11 +60,11 @@
       border-radius: 15px;
       padding: 40px 20px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      animation: fadeInUp 1.5s ease;
+      animation: fadeIn 1.5s ease;
     }
 
     .section h2 {
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Poppins', sans-serif;
       color: #6a1b9a; /* deep purple */
       font-size: 32px;
       margin-bottom: 30px;
@@ -87,12 +86,11 @@
       border-radius: 15px;
       text-align: center;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: transform 0.3s;
     }
 
     .card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      transform: translateY(-10px);
     }
 
     .card i {
@@ -111,7 +109,6 @@
       width: 100%;
       border-collapse: collapse;
       font-size: 18px;
-      animation: fadeInUp 1.5s ease;
     }
 
     table, th, td {
@@ -127,7 +124,7 @@
       text-align: left;
     }
 
-    @keyframes fadeInUp {
+    @keyframes fadeIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
@@ -157,6 +154,7 @@
       opacity: 1;
       transform: translateY(0);
     }
+
   </style>
 </head>
 <body>
@@ -219,7 +217,6 @@
       <tr class="fade-row">
         <td>Instagram</td>
         <td>@Starlight_017</td>
-      </tr>
       <tr class="fade-row">
         <td>*Note*</td>
         <td>Please contact me if you have any question, I would be very happy to hear from you</td>
